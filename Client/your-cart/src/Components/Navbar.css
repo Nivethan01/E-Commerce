@@ -1,0 +1,62 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #575555;
+  color: white;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Center the navbar container */
+.navbar-container {
+  width: 100%; /* Take up full width */
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Left section: logo */
+.navbar-left .logo {
+  height: 40px;
+}
+
+/* Center section: navigation icons */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Right section: login/logout icon */
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* General styling for navbar icons */
+.navbar-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Add hover effect for icons */
+.navbar-icon:hover {
+  transform: scale(1.1);
+}
