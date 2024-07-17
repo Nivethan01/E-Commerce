@@ -11,14 +11,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #575555;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(1, 1, 1);
   height: 60px;
   width: 100%;
-  position: fixed;
-  top: 0;
+  position: fixed; /* Fixed position to stay at the top */
+  top: 0; /* Distance from the top */
   left: 0;
   right: 0;
+  z-index: 1000; /* Ensure the navbar stays above other content */
+  border-top: 10px none #ff6550; /* Adjust border styles */
+  border-bottom: 10px solid #000000; /* Adjust border styles */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 /* Center the navbar container */

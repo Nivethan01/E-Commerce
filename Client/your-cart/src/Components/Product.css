@@ -1,74 +1,184 @@
-/* Product Styles */
+/* Reset some default styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for products list */
 .products-list {
-    margin-top: 20px;
-  }
-  
-  .error {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto; /* Ensure vertical scrolling if needed */
+}
+
+/* Heading for products */
+.products-list h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Toggle between view modes */
+.view-mode-toggle {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.view-mode-toggle button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  background-color: #e91e63;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.view-mode-toggle button:hover {
+  background-color: #d81b60;
+}
+
+/* Product cards container */
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual product card */
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(100% - 40px);
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Product image */
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensure images fill their containers */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Product details */
+.product-details {
+  padding: 15px;
+  text-align: left;
+}
+
+/* Header section of product */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Brand name of product */
+.product-brand {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Price of product */
+.product-price {
+  font-size: 1.2em;
+  color: #e91e63;
+}
+
+/* Name of product */
+.product-name {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Icons for product actions */
+.product-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.product-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
   .product-card {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 10px rgba(169, 123, 123, 0.1);
+    width: calc(50% - 40px);
+  }
+}
+
+@media (min-width: 900px) {
+  .product-card {
+    width: calc(33.333% - 40px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-card {
+    width: calc(25% - 40px);
+  }
+}
+
+/* Mobile and Desktop View Mode */
+#products.mobile-view .product-cards {
+  flex-direction: column;
+  align-items: center;
+}
+
+#products.desktop-view .product-cards {
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Ensure the "Collections" text is visible and products do not overlap navbar */
+@media (max-width: 600px) {
+  .products-list {
+    padding-top: 60px; /* Add padding to avoid overlap with navbar */
   }
   
-  .product-image {
-    flex: 0 0 30%;
+  .products-list h2 {
+    font-size: 1.5em; /* Adjust font size for mobile */
   }
-  
-  .product-image img {
-    width: 100%;
-    height: auto;
+
+  .view-mode-toggle {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .product-details {
-    flex: 1;
-    padding: 10px;
+
+  .product-card {
+    width: calc(100% - 20px); /* Adjust width for mobile view */
   }
-  
-  .product-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+}
+
+/* Ensure "Collections" text visibility for smaller screens */
+@media (max-width: 900px) {
+  .products-list h2 {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
   }
-  
-  .product-brand {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .product-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .product-name {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .product-icons {
-    display: flex;
-  }
-  
-  .product-icons img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .favorite-icon {
-    filter: grayscale(100%);
-  }
-  
-  .cart-icon {
-    margin-right: 0;
-  }
-  
+}

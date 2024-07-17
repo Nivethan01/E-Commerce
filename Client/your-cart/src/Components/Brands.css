@@ -1,0 +1,27 @@
+.brands-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .brands-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between items */
+    padding: 20px 0;
+  }
+  
+  .brand-item {
+    flex: 0 0 auto;
+    width: 150px; /* Adjust item width as needed */
+    height: 100px; /* Adjust item height as needed */
+  }
+  
+  .brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within its container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

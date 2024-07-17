@@ -1,36 +1,26 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./Home.css";
+import React from 'react';
+import './Home.css';
+import ImgSlider from './ImgSlider';
+import Brands from './Brands';
+import img1 from '../assets/Slider_images/slide1.png';
+import img2 from '../assets/Slider_images/slide2.jpeg';
+import img3 from '../assets/Slider_images/slide3.jpeg';
+import img4 from '../assets/Slider_images/slide4.jpeg';
 
-const Home = ({ isAuthenticated, userData }) => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get("http://localhost:3001/images");
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+const Home = () => {
+  const slides = [
+    { url: img1, title: 'slide1' },
+    { url: img2, title: 'slide2' },
+    { url: img3, title: 'slide3' },
+    { url: img4, title: 'slide4' },
+  ];
 
   return (
-    <div className="home">
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1>
-            Welcome, {isAuthenticated && userData ? userData.username : "you"}
-          </h1>
-          <p>Discover the best products curated just for you.</p>
-          <a href="#products" className="shop-now-button">View Fashions</a>
-        </div>
+    <div className="home-container">
+      <div className="home-slider">
+        <ImgSlider slides={slides} />
       </div>
-
-      
+      <Brands />
     </div>
   );
 };
