@@ -1,14 +1,21 @@
-/* Reset some default styles */
+/* Global Styles */
 body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffffff, #000000);
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* Container for products list */
 .products-list {
   padding: 20px;
   text-align: center;
-  overflow-y: auto; /* Ensure vertical scrolling if needed */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Heading for products */
@@ -16,29 +23,6 @@ body {
   font-size: 2em;
   margin-bottom: 20px;
   color: #333;
-}
-
-/* Toggle between view modes */
-.view-mode-toggle {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.view-mode-toggle button {
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border: none;
-  background-color: #e91e63;
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.view-mode-toggle button:hover {
-  background-color: #d81b60;
 }
 
 /* Product cards container */
@@ -55,7 +39,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: calc(100% - 40px);
+  width: 100%;
   max-width: 300px;
   transition: transform 0.3s ease;
 }
@@ -145,17 +129,6 @@ body {
   }
 }
 
-/* Mobile and Desktop View Mode */
-#products.mobile-view .product-cards {
-  flex-direction: column;
-  align-items: center;
-}
-
-#products.desktop-view .product-cards {
-  flex-direction: row;
-  justify-content: center;
-}
-
 /* Ensure the "Collections" text is visible and products do not overlap navbar */
 @media (max-width: 600px) {
   .products-list {
@@ -164,11 +137,6 @@ body {
   
   .products-list h2 {
     font-size: 1.5em; /* Adjust font size for mobile */
-  }
-
-  .view-mode-toggle {
-    flex-direction: column;
-    gap: 10px;
   }
 
   .product-card {
